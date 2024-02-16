@@ -1,23 +1,30 @@
 ---
-import MicroFrontends from "../components/MicroFrontends";
-import { buildManifest } from "../utils/manifest";
-
-const manifest = await buildManifest();
+import HeaderComponent from "../components/HeaderComponent.astro";
+import Menu from "../components/Menu";
+import AccountShell from "../components/account/account-shell";
+import PersonShell from "../components/person/person-shell";
+import SecurityOverview from "../components/securities/Security-Overview.astro";
+import Layout from "../layouts/page-layout.astro";
+import "./index.css";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href={manifest.mfa.css} />
-    <link rel="stylesheet" href={manifest.mfb.css} />
-    <title>Shell app</title>
-  </head>
-  <body>
+<Layout>
+  <div class="container">
+    <header class="gray"><HeaderComponent /></header>
+    <aside class="gray"><Menu /></aside>
     <main>
-      <h1>Shell app</h1>
-      <MicroFrontends manifest={manifest}>
+      <section class="contact-info red">
+        <PersonShell />
+      </section>
+      <div class="content">
+        <div class="account-data green">
+          <AccountShell />
+        </div>
+        <div class="securities-list blue">
+          <SecurityOverview />
+        </div>
+      </div>
     </main>
-  </body>
-</html>
+    <footer class="gray">Footer</footer>
+  </div>
+</Layout>

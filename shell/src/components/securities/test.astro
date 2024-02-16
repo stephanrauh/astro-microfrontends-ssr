@@ -1,0 +1,12 @@
+---
+import Contact from '../components/Contact.jsx';
+
+const { customerId } = Astro.props;
+const response = await fetch(`https://my-account-app/api/account/${customerId}`);
+const customer = await response.json();
+
+---
+<h1>Customer</h1>
+<h2>{customer.firstName} {customer.lastName}</h2>
+
+<Contact client:load customerId={customerId} />

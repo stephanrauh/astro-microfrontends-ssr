@@ -3,7 +3,7 @@ import "./App.css";
 
 const App = () => (
   <section className="app-a">
-    <h1>App a</h1>
+    <h1>Account</h1>
   </section>
 );
 

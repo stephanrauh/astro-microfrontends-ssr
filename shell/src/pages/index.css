@@ -1,0 +1,70 @@
+.container {
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 200px 1fr; /* Sidebar width and main content */
+    grid-template-rows: 1fr 5fr 1fr; /* Header, main content, footer heights */
+    height: 95vh;
+}
+
+header {
+    grid-area: header;
+    /* styles for header */
+}
+
+aside {
+    grid-area: sidebar;
+    /* styles for sidebar */
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info {
+    /* styles for contact information section */
+    margin-bottom: 10px;
+}
+
+.content {
+    display: flex;
+    gap: 10px;
+    flex: 1; /* Takes remaining space */
+}
+
+.account-data {
+    flex: 3; /* Wider column for account data */
+    /* styles for account data */
+}
+
+.securities-list {
+    flex: 1; /* Smaller column for securities list */
+    /* styles for securities list */
+}
+
+footer {
+    grid-area: footer;
+    /* styles for footer */
+}
+
+
+.gray {
+    border: 3px solid gray;
+}
+
+.blue {
+    border: 3px solid blue;
+}
+
+.green {
+    border: 3px solid green;
+}
+
+.red {
+    border: 3px solid red;
+}

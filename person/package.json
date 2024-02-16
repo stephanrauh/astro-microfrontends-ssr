@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite --port 3000",
     "build": "vite build",
+    "postbuild": "cp dist/bundle.* ../shell/src/components/person/",
     "preview": "vite preview",
     "test": "vitest"
   },

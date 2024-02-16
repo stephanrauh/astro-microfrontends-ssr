@@ -11,8 +11,8 @@ export default ({ command }) => ({
       preserveEntrySignatures: "exports-only",
       external: ["react", "react-dom"],
       output: {
-        entryFileNames: "bundle.[hash].js",
-        assetFileNames: "bundle.[hash].css",
+        entryFileNames: "bundle.js",
+        assetFileNames: "bundle.css",
         format: "esm",
       },
     },
